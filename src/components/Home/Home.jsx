@@ -20,7 +20,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Trending Movies</h1>
+      <h1>Trending Today</h1>
       {movies.map((movie) => (
         <div key={movie.id}>
           <Link to={`/movies/${movie.id}`}>{movie.title}</Link>

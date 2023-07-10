@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import SearchBar from '../SearchBar/SearchBar';
 
 const Movies = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -20,7 +19,6 @@ const Movies = () => {
   return (
     <div>
       <h1>Search Movies</h1>
-      <SearchBar onSubmit={handleSearch} value={searchQuery} onChange={setSearchQuery} />
       <form onSubmit={handleSearch}>
         <input
           type="text"
