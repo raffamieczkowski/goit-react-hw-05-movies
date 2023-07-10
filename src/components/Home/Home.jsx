@@ -9,7 +9,7 @@ const Home = () => {
     const fetchTrendingMovies = async () => {
       try {
         const response = await api.getTrendingMovies();
-        setMovies(response.data.results);
+        setMovies(response.results);
       } catch (error) {
         console.error('Failed to fetch trending movies:', error);
       }

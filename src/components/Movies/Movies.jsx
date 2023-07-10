@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SearchBar from '../SearchBar/SearchBar';
-import api from '../Api/Api';
 
 const Movies = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -11,7 +10,6 @@ const Movies = () => {
     e.preventDefault();
 
     try {
-      const response = await api.searchMovies(searchQuery);
       navigate(`/movies/results?query=${searchQuery}`);
       setSearchQuery('');
     } catch (error) {
@@ -22,7 +20,7 @@ const Movies = () => {
   return (
     <div>
       <h1>Search Movies</h1>
-      <SearchBar />
+      <SearchBar onSubmit={handleSearch} value={searchQuery} onChange={setSearchQuery} />
       <form onSubmit={handleSearch}>
         <input
           type="text"

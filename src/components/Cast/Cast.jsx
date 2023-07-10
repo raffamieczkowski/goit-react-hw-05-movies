@@ -10,7 +10,7 @@ const Cast = () => {
     const fetchMovieCast = async () => {
       try {
         const response = await api.getMovieCredits(movieId);
-        setCast(response.data.cast);
+        setCast(response.cast);
       } catch (error) {
         console.error('Failed to fetch movie cast:', error);
       }

@@ -10,7 +10,7 @@ const MovieDetails = () => {
     const fetchMovieDetails = async () => {
       try {
         const response = await api.getMovieDetails(movieId);
-        setMovie(response.data);
+        setMovie(response);
       } catch (error) {
         console.error('Failed to fetch movie details:', error);
       }
