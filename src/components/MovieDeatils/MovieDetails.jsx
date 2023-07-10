@@ -27,7 +27,7 @@ const MovieDetails = () => {
     <div>
       <h1>{movie.title}</h1>
       <p>{movie.overview}</p>
-      <Outlet /> {/* Dodany import Outlet */}
+      <Outlet />
     </div>
   );
 };
