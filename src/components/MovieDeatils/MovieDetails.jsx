@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Outlet } from 'react-router-dom';
 import api from '../Api/Api';
 
 const MovieDetails = () => {
@@ -27,6 +27,7 @@ const MovieDetails = () => {
     <div>
       <h1>{movie.title}</h1>
       <p>{movie.overview}</p>
+      <Outlet /> {/* Dodany import Outlet */}
     </div>
   );
 };
