@@ -5,12 +5,11 @@ const Movies = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
 
-  const handleSearch = async (e) => {
+  const handleSearch = (e) => {
     e.preventDefault();
 
     try {
       navigate(`/movies/results?query=${searchQuery}`);
-      setSearchQuery('');
     } catch (error) {
       console.error('Failed to search movies:', error);
     }

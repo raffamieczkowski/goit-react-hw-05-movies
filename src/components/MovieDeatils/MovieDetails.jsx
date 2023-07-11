@@ -27,6 +27,13 @@ const MovieDetails = () => {
     <div>
       <h1>{movie.title}</h1>
       <p>{movie.overview}</p>
+      <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.title} /> {/* Dodany kod do wyświetlania plakatu filmu */}
+      <h2>Genres:</h2>
+      <ul>
+        {movie.genres.map((genre) => (
+          <li key={genre.id}>{genre.name}</li>
+        ))}
+      </ul>
       <Outlet />
     </div>
   );
