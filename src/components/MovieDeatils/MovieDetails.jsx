@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Outlet } from 'react-router-dom';
+import { useParams, Outlet, Link } from 'react-router-dom';
 import api from '../Api/Api';
 
 const MovieDetails = () => {
@@ -27,13 +27,25 @@ const MovieDetails = () => {
     <div>
       <h1>{movie.title}</h1>
       <p>{movie.overview}</p>
-      <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.title} /> {/* Dodany kod do wyświetlania plakatu filmu */}
+      <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.title} />
+
       <h2>Genres:</h2>
       <ul>
         {movie.genres.map((genre) => (
           <li key={genre.id}>{genre.name}</li>
         ))}
       </ul>
+
+      <h2>Additional Information:</h2>
+      <ul>
+        <li>
+          <Link to={`/movies/${movieId}/cast`}>Cast</Link>
+        </li>
+        <li>
+          <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
+        </li>
+      </ul>
+
       <Outlet />
     </div>
   );

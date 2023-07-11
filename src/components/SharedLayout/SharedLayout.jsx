@@ -14,7 +14,6 @@ const SharedLayout = () => {
           </li>
         </ul>
       </nav>
-      <h1>Shared Layout</h1>
       <Outlet />
     </div>
   );
