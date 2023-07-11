@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Outlet, Link } from 'react-router-dom';
+import { useParams, Outlet } from 'react-router-dom';
 import api from '../Api/Api';
+import Cast from '../Cast/Cast';
+import Reviews from '../Reviews/Reviews';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
+  const [showCast, setShowCast] = useState(false);
+  const [showReviews, setShowReviews] = useState(false);
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -23,6 +27,14 @@ const MovieDetails = () => {
     return <div>Loading...</div>;
   }
 
+  const toggleCast = () => {
+    setShowCast(!showCast);
+  };
+
+  const toggleReviews = () => {
+    setShowReviews(!showReviews);
+  };
+
   return (
     <div>
       <h1>{movie.title}</h1>
@@ -39,10 +51,16 @@ const MovieDetails = () => {
       <h2>Additional Information:</h2>
       <ul>
         <li>
-          <Link to={`/movies/${movieId}/cast`}>Cast</Link>
+          <button onClick={toggleCast}>{showCast ? 'Hide Cast' : 'Show Cast'}</button>
+          {showCast && <Cast />}
         </li>
         <li>
-          <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
+          <button onClick={toggleReviews}>{showReviews ? 'Hide Reviews' : 'Show Reviews'}</button>
+          {showReviews ? (
+            <Reviews movieId={movieId} />
+          ) : (
+            movie.vote_count === 0 && <p>We don't have any reviews for this movie.</p>
+          )}
         </li>
       </ul>
 
