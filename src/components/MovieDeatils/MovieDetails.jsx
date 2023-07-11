@@ -3,6 +3,7 @@ import { useParams, Outlet } from 'react-router-dom';
 import api from '../Api/Api';
 import Cast from '../Cast/Cast';
 import Reviews from '../Reviews/Reviews';
+import styles from './MovieDetails.css';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -39,27 +40,27 @@ const MovieDetails = () => {
     <div>
       <h1>{movie.title}</h1>
       <p>{movie.overview}</p>
-      <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.title} />
+      <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.title} className={styles['movie-image']} />
 
       <h2>Genres:</h2>
-      <ul>
+      <ul className={styles['genres-list']}>
         {movie.genres.map((genre) => (
-          <li key={genre.id}>{genre.name}</li>
+          <li className={styles['genres-item']} key={genre.id}>{genre.name}</li>
         ))}
       </ul>
 
       <h2>Additional Information:</h2>
-      <ul>
+      <ul className={styles['additional-info']}>
         <li>
-          <button onClick={toggleCast}>{showCast ? 'Hide Cast' : 'Show Cast'}</button>
+          <button onClick={toggleCast} className={styles['toggle-button']}>{showCast ? 'Hide Cast' : 'Show Cast'}</button>
           {showCast && <Cast />}
         </li>
         <li>
-          <button onClick={toggleReviews}>{showReviews ? 'Hide Reviews' : 'Show Reviews'}</button>
+          <button onClick={toggleReviews} className={styles['toggle-button']}>{showReviews ? 'Hide Reviews' : 'Show Reviews'}</button>
           {showReviews ? (
             <Reviews movieId={movieId} />
           ) : (
-            movie.vote_count === 0 && <p>We don't have any reviews for this movie.</p>
+            movie.vote_count === 0 && <p className={styles['reviews-message']}>We don't have any reviews for this movie.</p>
           )}
         </li>
       </ul>

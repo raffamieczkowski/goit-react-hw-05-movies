@@ -1,0 +1,15 @@
+.movie-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .movie-item {
+    margin-bottom: 20px;
+  }
+  
+  .movie-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  

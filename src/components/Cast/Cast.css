@@ -1,0 +1,21 @@
+.cast-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .cast-item {
+    text-align: center;
+  }
+  
+  .cast-image {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  .cast-name {
+    font-weight: bold;
+  }
+  
