@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, Link, useNavigate } from 'react-router-dom';
 import api from '../Api/Api';
-import styles from './MovieSearchResult.css';
+import styles from './MovieSearchResult.module.css';
 
 const MovieSearchResults = () => {
   const location = useLocation();

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import styles from './SharedLayout.css';
+import styles from './SharedLayout.module.css';
 
 const SharedLayout = () => {
   return (

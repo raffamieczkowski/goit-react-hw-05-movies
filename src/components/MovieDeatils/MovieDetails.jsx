@@ -3,7 +3,7 @@ import { useParams, Outlet } from 'react-router-dom';
 import api from '../Api/Api';
 import Cast from '../Cast/Cast';
 import Reviews from '../Reviews/Reviews';
-import styles from './MovieDetails.css';
+import styles from './MovieDetails.module.css';
 
 const MovieDetails = () => {
   const { movieId } = useParams();

@@ -10,13 +10,13 @@ import SharedLayout from './SharedLayout/SharedLayout';
 import MovieSearchResults from './MovieSearchResult/MovieSearchResult';
 
 import './app.css';
-import './Home/Home.css';
-import './Movies/Movies.css';
-import './MovieDeatils/MovieDetails.css';
-import './Cast/Cast.css';
-import './Reviews/Reviews.css';
-import './SharedLayout/SharedLayout.css';
-import './MovieSearchResult/MovieSearchResult.css';
+import './Home/Home.module.css';
+import './Movies/Movies.module.css';
+import './MovieDeatils/MovieDetails.module.css';
+import './Cast/Cast.module.css';
+import './Reviews/Reviews.module.css';
+import './SharedLayout/SharedLayout.module.css';
+import './MovieSearchResult/MovieSearchResult.module.css';
 
 const App = () => {
   return (
